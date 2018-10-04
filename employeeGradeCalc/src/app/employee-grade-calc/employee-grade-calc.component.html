@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div [hidden]="submitted">
+    <h1>Employee Form</h1>
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input [(ngModel)]="employee.name" name="name" type="text" #errMsg="ngModel" class="form-control" id="name"
+          required>
+        <div [hidden]="errMsg.valid || errMsg.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Grade</label>
+        </div>
+        <select [(ngModel)]=employee.grade class="custom-select" name="grade" type="text" #errMsg1="ngModel" class="form-control"
+          id="grade" required>
+          <option selected>Choose...</option>
+          <option value="Manager">Manager</option>
+          <option value="Senior_Engineer">Senior Engineer</option>
+          <option value="Junior_Engineer">Junior Engineer</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+      <div [hidden]="errMsg1.valid || errMsg1.pristine" class="alert alert-danger">
+        Grade is required
+      </div>
+      <div class="form-group">
+        <label for="author">Base Salary</label>
+        <input [(ngModel)]=employee.baseSalary name="baseSalary" type="text" #errMsg2="ngModel" class="form-control" id="baseSalary"
+          required>
+        <div [hidden]="errMsg2.valid || errMsg2.pristine" class="alert alert-danger">
+          Basic Salary is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!employeeForm.form.valid">Submit</button>
+      <!-- <mat-input></mat-input> -->
+
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Id : </div>
+      <div class="col-xs-9  pull-left">{{employee.Id}}</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-3">Name : </div>
+      <div class="col-xs-9  pull-left">{{employee.name}}</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-3">Grade : </div>
+      <div class="col-xs-9 pull-left">{{employee.grade}}</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-3">Basic Salary : </div>
+      <div class="col-xs-9 pull-left">{{employee.baseSalary}}</div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-3">Total Salary : </div>
+      <div class="col-xs-9 pull-left">{{(employee.totalSalary).toFixed(2)}}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">GoBack</button>
+  </div>
+</div>

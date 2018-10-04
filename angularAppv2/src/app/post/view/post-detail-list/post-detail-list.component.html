@@ -1,0 +1,9 @@
+<h4>List of Posts</h4>
+<ul>
+  <li class="list-group-item" *ngFor="let post of posts"> 
+    <h6><span class="badge badge-secondary">{{post.id}}</span> {{post.title}}</h6>  
+    <button (click)="delete(post.id)"><h6> delete</h6></button>
+    <a routerLink="/post/update/{{post.id}}" routerLinkActive="active"><button ><h6>Update</h6></button></a>
+    <br>
+  </li>
+</ul>

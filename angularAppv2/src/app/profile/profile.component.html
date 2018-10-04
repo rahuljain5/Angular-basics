@@ -1,0 +1,19 @@
+<!-- <div class="input-group" >
+  <label for="grid">Grid</label>
+  <input type="radio" name="view" id="grid" (input) = "updateView('grid')">
+  <label for="cards">Cards</label>
+  <input type="radio" id="cards" name="view" (input) = "updateView('cards')">
+  <label for="list" default>list</label>
+  <input type="radio" id="list" name="view" (input) = "updateView('list')">
+</div> -->
+
+<!-- <div [ngSwitch] = "view" >
+<app-profile-detail-cards *ngSwitchCase = "'cards'" [profiles]="profiles"></app-profile-detail-cards>
+<app-profile-detail-list *ngSwitchCase = "'list'" [profiles]="profiles"></app-profile-detail-list>
+<h1 *ngSwitchDefault>Last One</h1>
+</div> -->
+
+<a [routerLink]="['./listview']" routerLinkActive="active" >List</a> | 
+<a [routerLink]="['./gridview']" routerLinkActive="active" >Grid </a> | 
+<a [routerLink]="['./cardview']" routerLinkActive="active" >Cards</a> 
+<router-outlet></router-outlet>

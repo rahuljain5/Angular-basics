@@ -1,0 +1,58 @@
+<h3>Interpolation</h3>
+<p>Expression {{ 10*10}}</p>
+<h4>Instance Variable: Primitives </h4>
+<!-- <p>Name: {{name}}</p>
+<p>Salary: {{salary}}</p>
+<p>Status: {{isActive? "Active" : "InActive"}}</p> -->
+<h4>Instance Variable: Objects </h4>
+<p>Name: {{customer.name}}</p>
+<p>ID: {{customer.id}}</p>
+<h4>Instance Variable: Arrays </h4>
+<ul>
+  <li *ngFor="let i of arr">
+    {{i}}
+  </li>
+</ul>
+<h4>table View</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cust of customers">
+      <th scope="row">{{cust.id}}</th>
+      <td>{{cust.name}}</td>
+    </tr>
+  </tbody>
+</table>
+<h4>Customers Card Layout</h4>
+<div class="card-group  ">
+  <div class="card" style="width: 18rem;" *ngFor="let cust of customers">
+    <div class="card-body">
+      <h5 class="card-title badge badge-secondary">{{cust.id}}</h5>
+      <p class="card-text">Name: {{cust.name}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isHidden">
+  <h1>Ummm.....IDK</h1>
+</div>
+<hr />
+<h4>With Condition</h4>
+
+<div class="card-group">
+  <div *ngFor="let p of people">
+    <div *ngIf="p.age<30">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{p.name}}</h5>
+          <p class="card-text">{{p.age}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

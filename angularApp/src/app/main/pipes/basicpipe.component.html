@@ -1,0 +1,11 @@
+<h1>basic Pipe Example</h1>
+<h3>Name: {{ name | uppercase}}</h3>
+<h3>Date {{ today | date:"dd/mm/yyyy"}}</h3>
+<h3>DoB {{ today | date | uppercase}}</h3>
+<h3>product: {{ product | json }}</h3>
+<h3>CUSTOM PIPE: </h3>
+<h3>Decimal: {{"fkjdf" | decimal:5}} </h3>
+<h3>CUSTOM PIPE Sort: </h3>
+<h3>Sort: {{ [2, 7, 1, 3, 5] | sort: "descending"}} </h3>
+
+

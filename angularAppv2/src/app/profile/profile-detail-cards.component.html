@@ -1,0 +1,20 @@
+<h1>Cards:</h1>
+<div class = "container card-group">
+<div class="row" *ngIf="profiles else loading">
+  <div class="card" style="width: 18rem;" *ngFor="let profile of profiles">
+    <!-- <div class="col-md-4"> -->
+      <a routerLink="/detail/{{profile.id}}">
+        <h5 class="card-title "><span class="badge badge-secondary">{{profile.id}}</span>{{profile.name}}</h5>
+      </a>
+      <div class="card-body"></div>
+        <!-- <br> -->
+        <h6 [class.hide]="selectedProfile === profile" (click)="select(profile)">show more...</h6>
+        <p class="card-text" [class.hide]="selectedProfile !== profile">works at {{profile.company.name}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+<!-- </div> -->
+<ng-template #loading>
+  <h2>Fetching...</h2>
+</ng-template>

@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <li [class.active]="selectedProd === product" *ngFor="let product of products" (click)="onSelect(product)">
+        <span>{{product.uniq_id}}</span>: {{product.product_name}}
+    </li>
+  </ul>
+  <div *ngIf="selectedProd">
+  <h3>ProductDetailView</h3>
+  <app-product-view-detail [product] = "selectedProd"></app-product-view-detail>
+  </div>
+</div>

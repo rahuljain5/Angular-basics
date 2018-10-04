@@ -1,0 +1,34 @@
+<!-- <p>Like: {{like}}</p>
+<button (click)="onLike($event)" class="btn-success">+</button>
+<button (click)="onDislike()" class="btn-danger">-</button> -->
+<hr>
+<h5>{{profileForm.firstName}} - {{profileForm.lastName}} - {{profileForm.email}} - {{profileForm.password}}</h5>
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" id="frmFirstName" placeholder="Enter First Name" (input)="profileForm.firstName = $event.target.value">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="frmLastName" placeholder="Enter Last Name" (input)="profileForm.lastName = $event.target.value">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="frmEmail" placeholder="Enter Email" (input)="profileForm.email = $event.target.value">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="frmPassword" placeholder="Enter Password" (input)="profileForm.password = $event.target.value">
+  </div>
+</form>
+<hr>
+<h1>Passing Data to Event Listeners</h1>
+<ul>
+  <li style="cursor:pointer" (click)=onSelect(c) *ngFor="let c of customers">
+    {{c.id}}
+  </li>
+</ul>
+<div *ngIf="selectedCustomer else unselectedCust">
+<h3>Customer Detail</h3>
+<p>ID: {{selectedCustomer.id}}</p>
+<p>Name: {{selectedCustomer.name}}</p>
+</div>
+<ng-template #unselectedCust>
+  <p>Choose a Customer </p>
+</ng-template>

@@ -1,0 +1,9 @@
+<h1>{{profile.name}} : <small>@{{profile.username}}</small></h1>
+<h4>{{profile.website}} | {{profile.email}}</h4>
+<h5>{{profile.phone}}</h5>
+<hr>
+<h5>Lives at:</h5>
+<p>{{profile.address.suite}}, {{profile.address.street}}, {{profile.address.city}}, {{profile.address.zipcode}}</p>
+<h5>Works at:</h5>
+<p>{{profile.company.name}}, {{profile.company.catchPhrase}} ({{profile.address.city}}, {{profile.company.bs}})</p>
+<button class="btn btn-success" (click)="goBack()">Back</button>

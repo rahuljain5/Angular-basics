@@ -1,0 +1,7 @@
+<h2>Add new Post</h2>
+<div *ngIf="post else loading">
+<input type="text" name="title" id="title" placeholder="Title" value="{{post.title}}" (input)="post.title=$event.target.value"><br />
+<input type="text" name="author" id="author" placeholder="Author" value="{{post.author}}" (input)="addAuthor($event)"><br>
+<button (click)="updatePost()">Add</button>
+</div>
+<ng-template #loading>Loading...</ng-template>

@@ -1,0 +1,16 @@
+<div *ngIf="profiles else loading">
+  <h2>List</h2>
+    <ul>
+      <li class="list-group-item" *ngFor="let profile of profiles">
+        <a routerLink="/detail/{{profile.id}}">
+          <span class="badge badge-secondary">{{profile.id}}</span> {{profile.name}}
+        </a>
+        <br>
+          <h6 [class.hide]="selectedProfile === profile" (click)="select(profile)">show more...</h6>
+            <p [class.hide]="selectedProfile !== profile">{{profile.company.name}}</p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #loading>
+    <h2>Fetching...</h2>
+  </ng-template>
